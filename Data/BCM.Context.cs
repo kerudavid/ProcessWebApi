@@ -13,10 +13,10 @@ namespace ProcessWebApi.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ClubMemoriaDBEntities : DbContext
+    public partial class BCMEntities : DbContext
     {
-        public ClubMemoriaDBEntities()
-            : base("name=ClubMemoriaDBEntities")
+        public BCMEntities()
+            : base("name=BCMEntities")
         {
         }
     
@@ -25,8 +25,17 @@ namespace ProcessWebApi.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Alimentacion> Alimentacion { get; set; }
         public virtual DbSet<Asistencia> Asistencia { get; set; }
+        public virtual DbSet<Calendario> Calendario { get; set; }
+        public virtual DbSet<Catering> Catering { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Codigo> Codigo { get; set; }
+        public virtual DbSet<Colaborador> Colaborador { get; set; }
+        public virtual DbSet<Plan> Plan { get; set; }
+        public virtual DbSet<Salud> Salud { get; set; }
+        public virtual DbSet<Transporte> Transporte { get; set; }
+        public virtual DbSet<Transportista> Transportista { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

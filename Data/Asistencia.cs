@@ -14,16 +14,13 @@ namespace ProcessWebApi.Data
     
     public partial class Asistencia
     {
-        public int IdAsistencia { get; set; }
-        public int IdCliente { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public System.DateTime HoraIngreso { get; set; }
-        public string Observaciones { get; set; }
-        public Nullable<int> Sucursal { get; set; }
-        public Nullable<int> IdUsuario { get; set; }
-        public Nullable<System.DateTime> FechaModificacion { get; set; }
-    
-        public virtual Cliente Cliente { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public int id_asistencia { get; set; }
+        public int fk_id_cliente { get; set; }
+        public string fecha { get; set; }
+        public string hora { get; set; }
+        public string observacion { get; set; }
+        public int sucursal { get; set; }
+        public string usuario { get; set; }
+        public string fecha_mod { get; set; }
     }
 }

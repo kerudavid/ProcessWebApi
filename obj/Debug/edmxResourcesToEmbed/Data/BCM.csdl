@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alimentacion">
+    <Key>
+      <PropertyRef Name="id_alimentacion" />
+    </Key>
+    <Property Name="id_alimentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="alimento_restringido" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Asistencia">
+    <Key>
+      <PropertyRef Name="id_asistencia" />
+    </Key>
+    <Property Name="id_asistencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hora" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sucursal" Type="Int32" Nullable="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Calendario">
+    <Key>
+      <PropertyRef Name="id_calendario" />
+    </Key>
+    <Property Name="id_calendario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_id_plan" Type="Int32" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Catering">
+    <Key>
+      <PropertyRef Name="id_catering" />
+    </Key>
+    <Property Name="id_catering" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="tipo_cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_menu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hora" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sucursal" Type="Int32" Nullable="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apodo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_free" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="aula" Type="Int32" />
+    <Property Name="dia_nacim" Type="Int32" />
+    <Property Name="mes_nacim" Type="Int32" />
+    <Property Name="anio_nacim" Type="Int32" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_contacto" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="parentesco_contacto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="celular_contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="encargado_pago" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="parentesco_pago" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cedula_pago" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="celular_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medio_pago" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="pariente_transp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="toma_transp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="id_transportista" Type="Int32" />
+    <Property Name="retirarse_solo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_factu" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cedula_factu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="direccion_factu" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="email_factu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sucursal" Type="Int32" />
+    <Property Name="observacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Codigo">
+    <Key>
+      <PropertyRef Name="id_codigo" />
+    </Key>
+    <Property Name="id_codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="grupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subgrupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="elemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="valor1" Type="Int32" />
+    <Property Name="valor2" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Colaborador">
+    <Key>
+      <PropertyRef Name="id_colaborador" />
+    </Key>
+    <Property Name="id_colaborador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sucursal" Type="Int32" Nullable="false" />
+    <Property Name="cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="id_plan" />
+    </Key>
+    <Property Name="id_plan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="sucursal" Type="Int32" Nullable="false" />
+    <Property Name="tipo_plan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_inicio_plan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="max_dia_plan" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Salud">
+    <Key>
+      <PropertyRef Name="id_salud" />
+    </Key>
+    <Property Name="id_salud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="enfermedad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="medicacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="carnet_vacuna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Transporte">
+    <Key>
+      <PropertyRef Name="id_transporte" />
+    </Key>
+    <Property Name="id_transporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="tipo_cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hora" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_transportista" Type="Int32" />
+    <Property Name="entrada_salida" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="sucursal" Type="Int32" Nullable="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Transportista">
+    <Key>
+      <PropertyRef Name="id_transportista" />
+    </Key>
+    <Property Name="id_transportista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sucursal" Type="Int32" Nullable="false" />
+    <Property Name="cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ruta" Type="Int32" Nullable="false" />
+    <Property Name="sector" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="placa_veh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nivel" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sucursal" Type="Int32" Nullable="false" />
+    <Property Name="observacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="BCMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alimentacion" EntityType="Self.Alimentacion" />
+    <EntitySet Name="Asistencia" EntityType="Self.Asistencia" />
+    <EntitySet Name="Calendario" EntityType="Self.Calendario" />
+    <EntitySet Name="Catering" EntityType="Self.Catering" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Codigo" EntityType="Self.Codigo" />
+    <EntitySet Name="Colaborador" EntityType="Self.Colaborador" />
+    <EntitySet Name="Plan" EntityType="Self.Plan" />
+    <EntitySet Name="Salud" EntityType="Self.Salud" />
+    <EntitySet Name="Transporte" EntityType="Self.Transporte" />
+    <EntitySet Name="Transportista" EntityType="Self.Transportista" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+  </EntityContainer>
+</Schema>

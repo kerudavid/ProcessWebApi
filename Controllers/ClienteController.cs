@@ -22,13 +22,13 @@ namespace ProcessWebApi.Controllers
             List<ClienteModel> clienteModelList = new List<ClienteModel>();
             try
             {
-                using (var db = new ClubMemoriaDBEntities())
+                using (var db = new BCMEntities())
                 {
                     var clientesInfo = (from Cliente in db.Cliente
                                         select Cliente).ToList();
-                    var clientesInfos = (from Cliente in db.Cliente
-                                         where Cliente.IdCliente == 1
-                                         select Cliente).FirstOrDefault();
+                    /*var clientesInfos = (from Cliente in db.Cliente
+                                         where Cliente.id_cliente == 1
+                                         select Cliente).FirstOrDefault();*/
 
                     if (clientesInfo.Count > 0)
                     {
@@ -36,8 +36,10 @@ namespace ProcessWebApi.Controllers
                         foreach (var item in clientesInfo)
                         {
                             ClienteModel clienteModel = new ClienteModel();
-                            clienteModel.IdCliente = item.IdCliente;
-                            clienteModel.Nombre = item.Nombre;
+                            clienteModel.IdCliente = item.id_cliente;
+                            clienteModel.Nombre = item.nombre;
+                            clienteModel.CI = item.cedula;
+                            clienteModel.IdTransportista = Int32.Parse(item.id_transportista.ToString());//Pasar int? a int
                             clienteModelList.Add(clienteModel);
                         }
                         cliente.ListaCliente = clienteModelList;

@@ -12,16 +12,20 @@ namespace ProcessWebApi.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Transportista
     {
-        public int id_usuario { get; set; }
-        public string usuario1 { get; set; }
-        public string clave { get; set; }
-        public int nivel { get; set; }
-        public string descripcion { get; set; }
-        public string estado { get; set; }
+        public int id_transportista { get; set; }
         public int sucursal { get; set; }
+        public string cedula { get; set; }
+        public string nombre { get; set; }
+        public int ruta { get; set; }
+        public string sector { get; set; }
+        public string placa_veh { get; set; }
+        public string telefono { get; set; }
+        public string direccion { get; set; }
+        public string estado { get; set; }
         public string observacion { get; set; }
+        public string usuario { get; set; }
         public string fecha_mod { get; set; }
     }
 }

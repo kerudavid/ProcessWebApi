@@ -13,6 +13,7 @@ namespace ProcessWebApi.Controllers
     [RoutePrefix("api/Asistencia")]
     public class AsistenciaController : ApiController
     {
+        public static string fechaIngreso = string.Empty;
         private bool validacionInfo(AsistenciaModel asistenciaModel)
         {
             bool response = true;
@@ -28,7 +29,7 @@ namespace ProcessWebApi.Controllers
             {
                 response = false;
             }
-            if (asistenciaModel.Usuario <= 0)
+            if (string.IsNullOrEmpty(asistenciaModel.NombreUsuario))
             {
                 response = false;
             }
@@ -52,31 +53,59 @@ namespace ProcessWebApi.Controllers
                 if (validacionInfo(asistenciaModel))
                 {
                     // Aqui viene la insercion a la BD
-                    using (var db = new ClubMemoriaDBEntities())
+                    using (var db = new BCMEntities())
                     {
                         var asistenciaInfo = (from Asistencia in db.Asistencia
-                                              where Asistencia.IdCliente == asistenciaModel.CodigoCliente
-                                              where Asistencia.Fecha.Equals(asistenciaModel.Fecha)
-                                              select Asistencia).FirstOrDefault();
-                        if (asistenciaInfo != null)
-                        {
+                                              where Asistencia.fk_id_cliente == asistenciaModel.CodigoCliente
+                                              select Asistencia).ToList();
+
+                        fechaIngreso = asistenciaModel.Fecha.ToString("dd/MM/yyyy");
+
+                        string fecha = asistenciaInfo.Where(x => String.Compare(x.fecha, asistenciaModel.Fecha.ToString("dd/MM/yyyy"), StringComparison.Ordinal) == 0).Select(x => x.fecha).FirstOrDefault();
+                        
+                        if (asistenciaInfo.Count > 0 && !string.IsNullOrEmpty(fecha))
+                        {                       
                             asistenciaResponseModel.Success = false;
-                            asistenciaResponseModel.MessageError = "Este cliente ya había registrado su asistencia";
+                            asistenciaResponseModel.MessageError = "Este cliente ya había registrado su asistencia";                                                  
                         }
                         else
                         {
                             Asistencia asistencia = new Asistencia();
-                            asistencia.IdCliente = asistenciaModel.CodigoCliente;
-                            asistencia.Fecha = asistenciaModel.Fecha;
-                            asistencia.FechaModificacion = asistenciaModel.FechaMod;
-                            asistencia.HoraIngreso = asistenciaModel.HoraEntrada;
-                            asistencia.Observaciones = asistenciaModel.Observaciones;
-                            asistencia.Sucursal = asistenciaModel.Sucursal;
-                            asistencia.IdUsuario = asistenciaModel.Usuario;
+                            asistencia.fk_id_cliente = asistenciaModel.CodigoCliente;
+                            asistencia.fecha = asistenciaModel.Fecha.ToString("dd/MM/yyyy");
+                            asistencia.fecha_mod = asistenciaModel.FechaMod.ToString("dd/MM/yyyy");
+                            asistencia.hora = asistenciaModel.HoraEntrada.ToString("HH:mm");
+                            asistencia.observacion = asistenciaModel.Observaciones;
+                            asistencia.sucursal = asistenciaModel.Sucursal;
+                            asistencia.usuario = asistenciaModel.NombreUsuario;
                             db.Asistencia.Add(asistencia);
                             db.SaveChanges();
                             asistenciaResponseModel.Success = true;
                         }
+
+                        var planInfo = (from Plan in db.Plan
+                                        where Plan.fk_id_cliente == asistenciaModel.CodigoCliente
+                                        && Plan.estado == "Activo"
+                                        select Plan).FirstOrDefault();
+                        
+                        if (planInfo!=null){
+                            
+                            var calendarioInfo = (
+                                from Calendario in db.Calendario
+                                where Calendario.fk_id_plan== planInfo.id_plan
+                                && Calendario.fecha== fechaIngreso
+                                && Calendario.estado== "R"
+                                select Calendario).FirstOrDefault();
+                            
+                            if (calendarioInfo != null)
+                            {
+                                calendarioInfo.estado = "C";
+                                calendarioInfo.fecha_mod = fechaIngreso;
+                                db.SaveChanges();
+                            }
+                        }
+
+                        
                     }
                 }
                 else

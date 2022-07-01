@@ -162,44 +162,80 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CateringController.cs" />
     <Compile Include="Controllers\AsistenciaController.cs" />
+    <Compile Include="Controllers\ColaboradorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\TransporteController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Data\Alimentacion.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Asistencia.cs">
-      <DependentUpon>ClubMemoriaDB.tt</DependentUpon>
+      <DependentUpon>BCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BCM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BCM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BCM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Calendario.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Catering.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Cliente.cs">
-      <DependentUpon>ClubMemoriaDB.tt</DependentUpon>
+      <DependentUpon>BCM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\ClubMemoriaDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClubMemoriaDB.Context.tt</DependentUpon>
+    <Compile Include="Data\Codigo.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\ClubMemoriaDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClubMemoriaDB.tt</DependentUpon>
+    <Compile Include="Data\Colaborador.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\ClubMemoriaDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClubMemoriaDB.edmx</DependentUpon>
+    <Compile Include="Data\Plan.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Salud.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Transporte.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Transportista.cs">
+      <DependentUpon>BCM.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Usuario.cs">
-      <DependentUpon>ClubMemoriaDB.tt</DependentUpon>
+      <DependentUpon>BCM.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EntityModels\CateringModel.cs" />
     <Compile Include="Models\EntityModels\AsistenciaModel.cs" />
     <Compile Include="Models\EntityModels\ClienteModel.cs" />
+    <Compile Include="Models\EntityModels\ColaboradorModel.cs" />
+    <Compile Include="Models\EntityModels\TransporteModel.cs" />
     <Compile Include="Models\EntityModels\UsuarioLoginModel.cs" />
+    <Compile Include="Models\ResponseModels\CateringResponseModel.cs" />
     <Compile Include="Models\ResponseModels\AsistenciaResponseModel.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Models\ResponseModels\ColaboradorResponseModel.cs" />
     <Compile Include="Models\ResponseModels\LoginResponseModel.cs" />
     <Compile Include="Models\ResponseModels\ClienteResponseModel.cs" />
+    <Compile Include="Models\ResponseModels\TransporteResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -208,15 +244,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Data\ClubMemoriaDB.Context.tt">
+    <Content Include="Data\BCM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClubMemoriaDB.edmx</DependentUpon>
-      <LastGenOutput>ClubMemoriaDB.Context.cs</LastGenOutput>
+      <DependentUpon>BCM.edmx</DependentUpon>
+      <LastGenOutput>BCM.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Data\ClubMemoriaDB.tt">
+    <Content Include="Data\BCM.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClubMemoriaDB.edmx</DependentUpon>
-      <LastGenOutput>ClubMemoriaDB.cs</LastGenOutput>
+      <DependentUpon>BCM.edmx</DependentUpon>
+      <LastGenOutput>BCM.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -242,12 +278,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Data\ClubMemoriaDB.edmx">
+    <EntityDeploy Include="Data\BCM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ClubMemoriaDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>BCM.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Data\ClubMemoriaDB.edmx.diagram">
-      <DependentUpon>ClubMemoriaDB.edmx</DependentUpon>
+    <Content Include="Data\BCM.edmx.diagram">
+      <DependentUpon>BCM.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

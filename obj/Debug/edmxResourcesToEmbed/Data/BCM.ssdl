@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Alimentacion">
+    <Key>
+      <PropertyRef Name="id_alimentacion" />
+    </Key>
+    <Property Name="id_alimentacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="int" Nullable="false" />
+    <Property Name="alimento_restringido" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="500" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Asistencia">
+    <Key>
+      <PropertyRef Name="id_asistencia" />
+    </Key>
+    <Property Name="id_asistencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hora" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="100" />
+    <Property Name="sucursal" Type="int" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Calendario">
+    <Key>
+      <PropertyRef Name="id_calendario" />
+    </Key>
+    <Property Name="id_calendario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_plan" Type="int" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Catering">
+    <Key>
+      <PropertyRef Name="id_catering" />
+    </Key>
+    <Property Name="id_catering" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="int" Nullable="false" />
+    <Property Name="tipo_cliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo_menu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hora" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="100" />
+    <Property Name="sucursal" Type="int" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cedula" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="apodo" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_free" Type="varchar" MaxLength="10" />
+    <Property Name="sexo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="aula" Type="int" />
+    <Property Name="dia_nacim" Type="int" />
+    <Property Name="mes_nacim" Type="int" />
+    <Property Name="anio_nacim" Type="int" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="nombre_contacto" Type="varchar" MaxLength="40" />
+    <Property Name="parentesco_contacto" Type="varchar" MaxLength="20" />
+    <Property Name="telefono_contacto" Type="varchar" MaxLength="50" />
+    <Property Name="celular_contacto" Type="varchar" MaxLength="50" />
+    <Property Name="encargado_pago" Type="varchar" MaxLength="40" />
+    <Property Name="parentesco_pago" Type="varchar" MaxLength="20" />
+    <Property Name="telefono_pago" Type="varchar" MaxLength="50" />
+    <Property Name="cedula_pago" Type="varchar" MaxLength="20" />
+    <Property Name="celular_pago" Type="varchar" MaxLength="50" />
+    <Property Name="email_pago" Type="varchar" MaxLength="50" />
+    <Property Name="medio_pago" Type="varchar" MaxLength="15" />
+    <Property Name="pariente_transp" Type="varchar" MaxLength="50" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
+    <Property Name="toma_transp" Type="varchar" MaxLength="15" />
+    <Property Name="id_transportista" Type="int" />
+    <Property Name="retirarse_solo" Type="varchar" MaxLength="15" />
+    <Property Name="nombre_factu" Type="varchar" MaxLength="60" />
+    <Property Name="cedula_factu" Type="varchar" MaxLength="20" />
+    <Property Name="direccion_factu" Type="varchar" MaxLength="80" />
+    <Property Name="email_factu" Type="varchar" MaxLength="100" />
+    <Property Name="sucursal" Type="int" />
+    <Property Name="observacion" Type="varchar" MaxLength="100" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Codigo">
+    <Key>
+      <PropertyRef Name="id_codigo" />
+    </Key>
+    <Property Name="id_codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grupo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="subgrupo" Type="varchar" MaxLength="50" />
+    <Property Name="elemento" Type="varchar" MaxLength="50" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="valor1" Type="int" />
+    <Property Name="valor2" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Colaborador">
+    <Key>
+      <PropertyRef Name="id_colaborador" />
+    </Key>
+    <Property Name="id_colaborador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sucursal" Type="int" Nullable="false" />
+    <Property Name="cedula" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="80" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="cargo" Type="varchar" MaxLength="50" />
+    <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="50" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="id_plan" />
+    </Key>
+    <Property Name="id_plan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="int" Nullable="false" />
+    <Property Name="sucursal" Type="int" Nullable="false" />
+    <Property Name="tipo_plan" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha_inicio_plan" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="pagado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="max_dia_plan" Type="int" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="200" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Salud">
+    <Key>
+      <PropertyRef Name="id_salud" />
+    </Key>
+    <Property Name="id_salud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="int" Nullable="false" />
+    <Property Name="enfermedad" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="400" />
+    <Property Name="medicacion" Type="varchar" MaxLength="500" />
+    <Property Name="carnet_vacuna" Type="varchar" MaxLength="2" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Transporte">
+    <Key>
+      <PropertyRef Name="id_transporte" />
+    </Key>
+    <Property Name="id_transporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_cliente" Type="int" Nullable="false" />
+    <Property Name="tipo_cliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hora" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_transportista" Type="int" />
+    <Property Name="entrada_salida" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="150" />
+    <Property Name="sucursal" Type="int" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Transportista">
+    <Key>
+      <PropertyRef Name="id_transportista" />
+    </Key>
+    <Property Name="id_transportista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sucursal" Type="int" Nullable="false" />
+    <Property Name="cedula" Type="varchar" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ruta" Type="int" Nullable="false" />
+    <Property Name="sector" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="placa_veh" Type="varchar" MaxLength="50" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="direccion" Type="varchar" MaxLength="80" />
+    <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="50" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clave" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nivel" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sucursal" Type="int" Nullable="false" />
+    <Property Name="observacion" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="BCMModelStoreContainer">
+    <EntitySet Name="Alimentacion" EntityType="Self.Alimentacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Asistencia" EntityType="Self.Asistencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Calendario" EntityType="Self.Calendario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Catering" EntityType="Self.Catering" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Codigo" EntityType="Self.Codigo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan" EntityType="Self.Plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salud" EntityType="Self.Salud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transporte" EntityType="Self.Transporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transportista" EntityType="Self.Transportista" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

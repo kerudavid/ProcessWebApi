@@ -12,16 +12,17 @@ namespace ProcessWebApi.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Codigo
     {
-        public int id_usuario { get; set; }
-        public string usuario1 { get; set; }
-        public string clave { get; set; }
-        public int nivel { get; set; }
+        public int id_codigo { get; set; }
+        public string grupo { get; set; }
+        public string subgrupo { get; set; }
+        public string elemento { get; set; }
         public string descripcion { get; set; }
+        public Nullable<int> valor1 { get; set; }
+        public Nullable<decimal> valor2 { get; set; }
         public string estado { get; set; }
-        public int sucursal { get; set; }
-        public string observacion { get; set; }
+        public string usuario { get; set; }
         public string fecha_mod { get; set; }
     }
 }
