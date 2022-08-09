@@ -62,12 +62,12 @@ namespace ProcessWebApi.Controllers
                         catering.fk_id_cliente = almuerzoModel.CodigoPersona;
                         catering.tipo_cliente = almuerzoModel.TipoPersona;
                         catering.tipo_menu = almuerzoModel.TipoMenu;
-                        catering.fecha = almuerzoModel.Fecha.ToString("dd-MM-yyyy");
+                        catering.fecha = almuerzoModel.Fecha.ToString("dd/MM/yyyy");
                         catering.hora = almuerzoModel.Hora.ToString("HH:mm");
                         catering.observacion = almuerzoModel.Observaciones;
                         catering.sucursal = almuerzoModel.Sucursal;
                         catering.usuario = almuerzoModel.NombreUsuario;
-                        catering.fecha_mod = almuerzoModel.FechaMod.ToString("dd-MM-yyyy");
+                        catering.fecha_mod = almuerzoModel.FechaMod.ToString("dd/MM/yyyy");
                         db.Catering.Add(catering);
                         db.SaveChanges();
                         almuerzoResponseModel.Success = true;                     

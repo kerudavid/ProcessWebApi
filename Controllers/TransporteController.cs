@@ -64,9 +64,9 @@ namespace ProcessWebApi.Controllers
                                               && Transporte.entrada_salida==transporteModel.EntradaSalida
                                               select Transporte).ToList();
 
-                        fechaIngreso = transporteModel.Fecha.ToString("dd-MM-yyyy");
+                        fechaIngreso = transporteModel.Fecha.ToString("dd/MM/yyyy");
 
-                        string fecha = transporteInfo.Where(x => String.Compare(x.fecha, transporteModel.Fecha.ToString("dd-MM-yyyy"), StringComparison.Ordinal) == 0).Select(x => x.fecha).FirstOrDefault();
+                        string fecha = transporteInfo.Where(x => String.Compare(x.fecha, transporteModel.Fecha.ToString("dd/MM/yyyy"), StringComparison.Ordinal) == 0).Select(x => x.fecha).FirstOrDefault();
 
                         if (transporteInfo.Count > 0 && !string.IsNullOrEmpty(fecha))
                         {
@@ -78,13 +78,13 @@ namespace ProcessWebApi.Controllers
                         transporte.fk_id_cliente = transporteModel.CodigoPersona;
                         transporte.tipo_cliente = transporteModel.TipoPersona;
                         transporte.id_transportista = transporteModel.IdTransportista;
-                        transporte.fecha = transporteModel.Fecha.ToString("dd-MM-yyyy");
+                        transporte.fecha = transporteModel.Fecha.ToString("dd/MM/yyyy");
                         transporte.hora = transporteModel.Hora.ToString("HH:mm");
                         transporte.observacion = transporteModel.Observaciones;
                         transporte.sucursal = transporteModel.Sucursal;
                         transporte.usuario = transporteModel.NombreUsuario;
                         transporte.entrada_salida = transporteModel.EntradaSalida;
-                        transporte.fecha_mod = transporteModel.FechaMod.ToString("dd-MM-yyyy");
+                        transporte.fecha_mod = transporteModel.FechaMod.ToString("dd/MM/yyyy");
                         db.Transporte.Add(transporte);
                         db.SaveChanges();
                         transporteResponseModel.Success = true;
