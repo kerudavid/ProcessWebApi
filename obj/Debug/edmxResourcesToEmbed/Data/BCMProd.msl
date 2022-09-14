@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BCMModelStoreContainer" CdmEntityContainer="BCMEntities">
+  <EntityContainerMapping StorageEntityContainer="BCMProdModelStoreContainer" CdmEntityContainer="BCMProdEntities">
     <EntitySetMapping Name="Alimentacion">
-      <EntityTypeMapping TypeName="BCMModel.Alimentacion">
+      <EntityTypeMapping TypeName="BCMProdModel.Alimentacion">
         <MappingFragment StoreEntitySet="Alimentacion">
           <ScalarProperty Name="id_alimentacion" ColumnName="id_alimentacion" />
           <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -14,7 +14,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Asistencia">
-      <EntityTypeMapping TypeName="BCMModel.Asistencia">
+      <EntityTypeMapping TypeName="BCMProdModel.Asistencia">
         <MappingFragment StoreEntitySet="Asistencia">
           <ScalarProperty Name="id_asistencia" ColumnName="id_asistencia" />
           <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -28,7 +28,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Calendario">
-      <EntityTypeMapping TypeName="BCMModel.Calendario">
+      <EntityTypeMapping TypeName="BCMProdModel.Calendario">
         <MappingFragment StoreEntitySet="Calendario">
           <ScalarProperty Name="id_calendario" ColumnName="id_calendario" />
           <ScalarProperty Name="fk_id_plan" ColumnName="fk_id_plan" />
@@ -41,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Catering">
-      <EntityTypeMapping TypeName="BCMModel.Catering">
+      <EntityTypeMapping TypeName="BCMProdModel.Catering">
         <MappingFragment StoreEntitySet="Catering">
           <ScalarProperty Name="id_catering" ColumnName="id_catering" />
           <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -57,7 +57,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cliente">
-      <EntityTypeMapping TypeName="BCMModel.Cliente">
+      <EntityTypeMapping TypeName="BCMProdModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
           <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
           <ScalarProperty Name="cedula" ColumnName="cedula" />
@@ -101,7 +101,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Codigo">
-      <EntityTypeMapping TypeName="BCMModel.Codigo">
+      <EntityTypeMapping TypeName="BCMProdModel.Codigo">
         <MappingFragment StoreEntitySet="Codigo">
           <ScalarProperty Name="id_codigo" ColumnName="id_codigo" />
           <ScalarProperty Name="grupo" ColumnName="grupo" />
@@ -117,7 +117,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Colaborador">
-      <EntityTypeMapping TypeName="BCMModel.Colaborador">
+      <EntityTypeMapping TypeName="BCMProdModel.Colaborador">
         <MappingFragment StoreEntitySet="Colaborador">
           <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
           <ScalarProperty Name="sucursal" ColumnName="sucursal" />
@@ -134,7 +134,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Planes">
-      <EntityTypeMapping TypeName="BCMModel.Planes">
+      <EntityTypeMapping TypeName="BCMProdModel.Planes">
         <MappingFragment StoreEntitySet="Planes">
           <ScalarProperty Name="id_plan" ColumnName="id_plan" />
           <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -151,7 +151,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Salud">
-      <EntityTypeMapping TypeName="BCMModel.Salud">
+      <EntityTypeMapping TypeName="BCMProdModel.Salud">
         <MappingFragment StoreEntitySet="Salud">
           <ScalarProperty Name="id_salud" ColumnName="id_salud" />
           <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -165,7 +165,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Transporte">
-      <EntityTypeMapping TypeName="BCMModel.Transporte">
+      <EntityTypeMapping TypeName="BCMProdModel.Transporte">
         <MappingFragment StoreEntitySet="Transporte">
           <ScalarProperty Name="id_transporte" ColumnName="id_transporte" />
           <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -182,7 +182,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Transportista">
-      <EntityTypeMapping TypeName="BCMModel.Transportista">
+      <EntityTypeMapping TypeName="BCMProdModel.Transportista">
         <MappingFragment StoreEntitySet="Transportista">
           <ScalarProperty Name="id_transportista" ColumnName="id_transportista" />
           <ScalarProperty Name="sucursal" ColumnName="sucursal" />
@@ -201,7 +201,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="BCMModel.Usuario">
+      <EntityTypeMapping TypeName="BCMProdModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
           <ScalarProperty Name="usuario1" ColumnName="usuario" />

@@ -38,6 +38,7 @@ namespace ProcessWebApi.Data
         public string celular_pago { get; set; }
         public string email_pago { get; set; }
         public string medio_pago { get; set; }
+        public string frecuencia_pago { get; set; }
         public string pariente_transp { get; set; }
         public string direccion { get; set; }
         public string toma_transp { get; set; }

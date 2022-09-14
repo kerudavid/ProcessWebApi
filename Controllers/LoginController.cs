@@ -20,7 +20,7 @@ namespace ProcessWebApi.Controllers
             LoginResponseModel responseModel = new LoginResponseModel();
             try
             {
-                using (var db = new BCMEntities())
+                using (var db = new BCMProdEntities())
                 {
                     //Validar el estado del usuario, para proceder al login
                     var userInfo = (from Usuario in db.Usuario

@@ -170,10 +170,10 @@
     <Compile Include="Controllers\TransporteController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\Alimentacion.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Asistencia.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\BCM.Context.cs">
       <AutoGen>True</AutoGen>
@@ -190,35 +190,50 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BCM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\BCMProd.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCMProd.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BCMProd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCMProd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BCMProd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BCMProd.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Data\Calendario.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Catering.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Cliente.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Codigo.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Colaborador.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Plan.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+    <Compile Include="Data\Planes.cs">
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Salud.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Transporte.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Transportista.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Usuario.cs">
-      <DependentUpon>BCM.tt</DependentUpon>
+      <DependentUpon>BCMProd.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,6 +269,16 @@
       <DependentUpon>BCM.edmx</DependentUpon>
       <LastGenOutput>BCM.cs</LastGenOutput>
     </Content>
+    <Content Include="Data\BCMProd.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BCMProd.edmx</DependentUpon>
+      <LastGenOutput>BCMProd.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\BCMProd.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BCMProd.edmx</DependentUpon>
+      <LastGenOutput>BCMProd.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -284,6 +309,13 @@
     </EntityDeploy>
     <Content Include="Data\BCM.edmx.diagram">
       <DependentUpon>BCM.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Data\BCMProd.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BCMProd.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\BCMProd.edmx.diagram">
+      <DependentUpon>BCMProd.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

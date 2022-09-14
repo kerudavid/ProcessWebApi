@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BCMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BCMProdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Alimentacion">
           <Key>
             <PropertyRef Name="id_alimentacion" />
@@ -13,7 +13,7 @@
           <Property Name="fk_id_cliente" Type="int" Nullable="false" />
           <Property Name="alimento_restringido" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="observacion" Type="varchar" MaxLength="500" />
-          <Property Name="usuario" Type="varchar" MaxLength="10" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" />
           <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Asistencia">
@@ -38,7 +38,7 @@
           <Property Name="fk_id_cliente" Type="int" Nullable="false" />
           <Property Name="fecha" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="estado" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="usuario" Type="varchar" MaxLength="10" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" />
           <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Catering">
@@ -96,7 +96,7 @@
           <Property Name="email_factu" Type="varchar" MaxLength="100" />
           <Property Name="sucursal" Type="int" />
           <Property Name="observacion" Type="varchar" MaxLength="100" />
-          <Property Name="usuario" Type="varchar" MaxLength="10" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" />
           <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Codigo">
@@ -156,7 +156,7 @@
           <Property Name="observacion" Type="varchar" MaxLength="400" />
           <Property Name="medicacion" Type="varchar" MaxLength="500" />
           <Property Name="carnet_vacuna" Type="varchar" MaxLength="2" />
-          <Property Name="usuario" Type="varchar" MaxLength="10" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" />
           <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Transporte">
@@ -207,7 +207,7 @@
           <Property Name="observacion" Type="varchar" MaxLength="50" />
           <Property Name="fecha_mod" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityContainer Name="BCMModelStoreContainer">
+        <EntityContainer Name="BCMProdModelStoreContainer">
           <EntitySet Name="Alimentacion" EntityType="Self.Alimentacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Asistencia" EntityType="Self.Asistencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Calendario" EntityType="Self.Calendario" Schema="dbo" store:Type="Tables" />
@@ -225,7 +225,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BCMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BCMProdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Alimentacion">
           <Key>
             <PropertyRef Name="id_alimentacion" />
@@ -234,7 +234,7 @@
           <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
           <Property Name="alimento_restringido" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Asistencia">
@@ -259,7 +259,7 @@
           <Property Name="fk_id_cliente" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Catering">
@@ -317,7 +317,7 @@
           <Property Name="email_factu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="sucursal" Type="Int32" />
           <Property Name="observacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Codigo">
@@ -377,7 +377,7 @@
           <Property Name="observacion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <Property Name="medicacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="carnet_vacuna" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Transporte">
@@ -428,7 +428,7 @@
           <Property Name="observacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fecha_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="BCMEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BCMProdEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alimentacion" EntityType="Self.Alimentacion" />
           <EntitySet Name="Asistencia" EntityType="Self.Asistencia" />
           <EntitySet Name="Calendario" EntityType="Self.Calendario" />
@@ -447,9 +447,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BCMModelStoreContainer" CdmEntityContainer="BCMEntities">
+        <EntityContainerMapping StorageEntityContainer="BCMProdModelStoreContainer" CdmEntityContainer="BCMProdEntities">
           <EntitySetMapping Name="Alimentacion">
-            <EntityTypeMapping TypeName="BCMModel.Alimentacion">
+            <EntityTypeMapping TypeName="BCMProdModel.Alimentacion">
               <MappingFragment StoreEntitySet="Alimentacion">
                 <ScalarProperty Name="id_alimentacion" ColumnName="id_alimentacion" />
                 <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -461,7 +461,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Asistencia">
-            <EntityTypeMapping TypeName="BCMModel.Asistencia">
+            <EntityTypeMapping TypeName="BCMProdModel.Asistencia">
               <MappingFragment StoreEntitySet="Asistencia">
                 <ScalarProperty Name="id_asistencia" ColumnName="id_asistencia" />
                 <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -475,7 +475,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Calendario">
-            <EntityTypeMapping TypeName="BCMModel.Calendario">
+            <EntityTypeMapping TypeName="BCMProdModel.Calendario">
               <MappingFragment StoreEntitySet="Calendario">
                 <ScalarProperty Name="id_calendario" ColumnName="id_calendario" />
                 <ScalarProperty Name="fk_id_plan" ColumnName="fk_id_plan" />
@@ -488,7 +488,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Catering">
-            <EntityTypeMapping TypeName="BCMModel.Catering">
+            <EntityTypeMapping TypeName="BCMProdModel.Catering">
               <MappingFragment StoreEntitySet="Catering">
                 <ScalarProperty Name="id_catering" ColumnName="id_catering" />
                 <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -504,7 +504,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
-            <EntityTypeMapping TypeName="BCMModel.Cliente">
+            <EntityTypeMapping TypeName="BCMProdModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
                 <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
                 <ScalarProperty Name="cedula" ColumnName="cedula" />
@@ -548,7 +548,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Codigo">
-            <EntityTypeMapping TypeName="BCMModel.Codigo">
+            <EntityTypeMapping TypeName="BCMProdModel.Codigo">
               <MappingFragment StoreEntitySet="Codigo">
                 <ScalarProperty Name="id_codigo" ColumnName="id_codigo" />
                 <ScalarProperty Name="grupo" ColumnName="grupo" />
@@ -564,7 +564,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Colaborador">
-            <EntityTypeMapping TypeName="BCMModel.Colaborador">
+            <EntityTypeMapping TypeName="BCMProdModel.Colaborador">
               <MappingFragment StoreEntitySet="Colaborador">
                 <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
                 <ScalarProperty Name="sucursal" ColumnName="sucursal" />
@@ -581,7 +581,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Planes">
-            <EntityTypeMapping TypeName="BCMModel.Planes">
+            <EntityTypeMapping TypeName="BCMProdModel.Planes">
               <MappingFragment StoreEntitySet="Planes">
                 <ScalarProperty Name="id_plan" ColumnName="id_plan" />
                 <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -598,7 +598,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Salud">
-            <EntityTypeMapping TypeName="BCMModel.Salud">
+            <EntityTypeMapping TypeName="BCMProdModel.Salud">
               <MappingFragment StoreEntitySet="Salud">
                 <ScalarProperty Name="id_salud" ColumnName="id_salud" />
                 <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -612,7 +612,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transporte">
-            <EntityTypeMapping TypeName="BCMModel.Transporte">
+            <EntityTypeMapping TypeName="BCMProdModel.Transporte">
               <MappingFragment StoreEntitySet="Transporte">
                 <ScalarProperty Name="id_transporte" ColumnName="id_transporte" />
                 <ScalarProperty Name="fk_id_cliente" ColumnName="fk_id_cliente" />
@@ -629,7 +629,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transportista">
-            <EntityTypeMapping TypeName="BCMModel.Transportista">
+            <EntityTypeMapping TypeName="BCMProdModel.Transportista">
               <MappingFragment StoreEntitySet="Transportista">
                 <ScalarProperty Name="id_transportista" ColumnName="id_transportista" />
                 <ScalarProperty Name="sucursal" ColumnName="sucursal" />
@@ -648,7 +648,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
-            <EntityTypeMapping TypeName="BCMModel.Usuario">
+            <EntityTypeMapping TypeName="BCMProdModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="usuario1" ColumnName="usuario" />

@@ -22,9 +22,10 @@ namespace ProcessWebApi.Controllers
             List<ClienteModel> clienteModelList = new List<ClienteModel>();
             try
             {
-                using (var db = new BCMEntities())
+                using (var db = new BCMProdEntities())
                 {
                     var clientesInfo = (from Cliente in db.Cliente
+                                        where Cliente.estado!="I"
                                         select Cliente).ToList();
                     /*var clientesInfos = (from Cliente in db.Cliente
                                          where Cliente.id_cliente == 1

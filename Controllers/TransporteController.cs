@@ -57,7 +57,7 @@ namespace ProcessWebApi.Controllers
                 if (validacionInfo(transporteModel))
                 {
                     // Aqui viene la insercion a la BD
-                    using (var db = new BCMEntities())
+                    using (var db = new BCMProdEntities())
                     {
                         var transporteInfo = (from Transporte in db.Transporte
                                               where Transporte.fk_id_cliente == transporteModel.CodigoPersona
@@ -71,7 +71,7 @@ namespace ProcessWebApi.Controllers
                         if (transporteInfo.Count > 0 && !string.IsNullOrEmpty(fecha))
                         {
                             transporteResponseModel.Success = false;
-                            transporteResponseModel.MessageError = "Este cliente ya había registrado su asistencia";
+                            transporteResponseModel.MessageError = "Este cliente ya había registrado su transporte de "+transporteModel.EntradaSalida;
                             return transporteResponseModel;
                         }
                         Transporte transporte = new Transporte();

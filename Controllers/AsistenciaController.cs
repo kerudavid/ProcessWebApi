@@ -53,7 +53,7 @@ namespace ProcessWebApi.Controllers
                 if (validacionInfo(asistenciaModel))
                 {
                     // Aqui viene la insercion a la BD
-                    using (var db = new BCMEntities())
+                    using (var db = new BCMProdEntities())
                     {
                         var asistenciaInfo = (from Asistencia in db.Asistencia
                                               where Asistencia.fk_id_cliente == asistenciaModel.CodigoCliente
@@ -83,9 +83,9 @@ namespace ProcessWebApi.Controllers
                             asistenciaResponseModel.Success = true;
                         }
 
-                        var planInfo = (from Plan in db.Plan
+                        var planInfo = (from Plan in db.Planes
                                         where Plan.fk_id_cliente == asistenciaModel.CodigoCliente
-                                        && Plan.estado == "Activo"
+                                        && Plan.estado == "VIGENTE"
                                         select Plan).FirstOrDefault();
                         
                         if (planInfo!=null){

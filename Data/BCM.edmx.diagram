@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b5af8b4746ed469e8dfda02bf4bde8fa" Name="Diagram1">
+      <Diagram DiagramId="4f824194d8754757ba9ee2e86a8d4f96" Name="Diagram1">
         <EntityTypeShape EntityType="BCMModel.Alimentacion" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCMModel.Asistencia" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCMModel.Calendario" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="BCMModel.Cliente" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCMModel.Codigo" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCMModel.Colaborador" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BCMModel.Plan" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMModel.Planes" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCMModel.Salud" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCMModel.Transporte" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCMModel.Transportista" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />

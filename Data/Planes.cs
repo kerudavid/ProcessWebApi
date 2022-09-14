@@ -12,7 +12,7 @@ namespace ProcessWebApi.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Plan
+    public partial class Planes
     {
         public int id_plan { get; set; }
         public int fk_id_cliente { get; set; }

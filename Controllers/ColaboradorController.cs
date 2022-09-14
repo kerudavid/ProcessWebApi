@@ -21,7 +21,7 @@ namespace ProcessWebApi.Controllers
             List<ColaboradorModel> colaboradorModelList = new List<ColaboradorModel>();
             try
             {
-                using (var db = new BCMEntities())
+                using (var db = new BCMProdEntities())
                 {
                     var colaboradorInfo = (from Colaborador in db.Colaborador
                                         select Colaborador).ToList();

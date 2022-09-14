@@ -56,7 +56,7 @@ namespace ProcessWebApi.Controllers
                 if (validacionInfo(almuerzoModel))
                 {
                     // Aqui viene la insercion a la BD
-                    using (var db = new BCMEntities())
+                    using (var db = new BCMProdEntities())
                     {
                         Catering catering = new Catering();
                         catering.fk_id_cliente = almuerzoModel.CodigoPersona;

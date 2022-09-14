@@ -13,10 +13,10 @@ namespace ProcessWebApi.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BCMEntities : DbContext
+    public partial class BCMProdEntities : DbContext
     {
-        public BCMEntities()
-            : base("name=BCMEntities")
+        public BCMProdEntities()
+            : base("name=BCMProdEntities")
         {
         }
     
